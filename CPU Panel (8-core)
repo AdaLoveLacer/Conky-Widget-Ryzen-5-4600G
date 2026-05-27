@@ -1,0 +1,64 @@
+# **********************************************************************
+# "CPU Panel (12-core)" theme for Conky - FIXED ALIGNMENT
+# **********************************************************************
+
+background yes
+double_buffer yes
+
+alignment bottom_left
+
+border_width 1
+cpu_avg_samples 2
+default_color white
+default_outline_color white
+default_shade_color white
+draw_borders no
+draw_graph_borders yes
+draw_outline no
+draw_shades no
+
+gap_x 205
+gap_y 1800
+net_avg_samples 2
+no_buffers yes
+out_to_console no
+out_to_stderr no
+extra_newline no
+
+own_window yes
+own_window_type normal
+own_window_transparent no
+own_window_colour 000000
+own_window_argb_visual yes
+own_window_argb_value 102
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+# AJUSTE AQUI: Definido para 400 (mesma largura dos gráficos) para sumir a barra lateral
+minimum_size 400 320
+maximum_width 400
+
+stippled_borders 0
+update_interval 0.5
+uppercase no
+use_spacer none
+
+show_graph_scale no
+show_graph_range no
+
+use_xft yes
+xftalpha 0.1
+xftfont Droid Sans:size=12
+color0 white
+color1 EAEAEA
+color2 FFA300
+color3 grey
+
+TEXT
+${color2}CPU ${color0} ${cpu cpu0}%  ${color3}${cpubar cpu0 10,330} 
+${color2}TEMP ${color0} ${hwmon 3 temp 3}°C ${color3}${execibar 1 10,310 cat /sys/class/hwmon/hwmon3/temp3_input | cut -c1-2}
+${cpugraph cpu0 100,400}${voffset -19}
+${cpugraph cpu1 50,100}${cpugraph cpu2 50,100}${cpugraph cpu3 50,100}${cpugraph cpu4 50,100}${voffset -19}
+${cpugraph cpu5 50,100}${cpugraph cpu6 50,100}${cpugraph cpu7 50,100}${cpugraph cpu8 50,100}${voffset -19}
+${cpugraph cpu9 50,100}${cpugraph cpu10 50,100}${cpugraph cpu11 50,100}${cpugraph cpu12 50,100}
+${font Ubuntu:size=10}${voffset -160}${color3}${goto 10}1 ${goto 110}2 ${goto 210}3 ${goto 310}4 ${voffset 50}${goto 10}5 ${goto 110}6 ${goto 210}7 ${goto 310}8 ${voffset 50}${goto 10}9 ${goto 110}10 ${goto 210}11 ${goto 310}12
+${font Ubuntu:size=8}${voffset -117}${color3}${goto 58}${freq_g 1}GHz ${goto 158}${freq_g 2}GHz ${goto 258}${freq_g 3}GHz ${goto 358}${freq_g 4}GHz ${voffset 50}${goto 58}${freq_g 5}GHz ${goto 158}${freq_g 6}GHz ${goto 258}${freq_g 7}GHz ${goto 358}${freq_g 8}GHz ${voffset 50}${goto 58}${freq_g 9}GHz ${goto 158}${freq_g 10}GHz ${goto 258}${freq_g 11}GHz ${goto 358}${freq_g 12}GHz
